@@ -1,0 +1,228 @@
+:root {
+  --bg-color-light: #0a0a12;
+  --text-color-light: #ffffff;
+  --bg-color-dark: #000000;
+  --text-color-dark: #ffffff;
+  --accent-color: #9d00ff;
+  --neon-effect: 0 0 8px #9d00ff, 0 0 16px #9d00ff;
+  --link-color-light: #bb66ff;
+  --link-color-dark: #cc88ff;
+  --border-radius: 8px;
+}
+
+* {
+  box-sizing: border-box;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  line-height: 1.6;
+  background-color: var(--bg-color-light);
+  color: var(--text-color-light);
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+  background-color: inherit;
+}
+
+.logo-link {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+header img {
+  width: 100px;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: var(--neon-effect);
+}
+
+header h1 {
+  font-size: clamp(24px, 5vw, 32px);
+  margin: 10px 0;
+  color: var(--accent-color);
+  text-shadow: var(--neon-effect);
+}
+
+button#theme-toggle {
+  margin-top: 10px;
+  background: var(--accent-color);
+  color: #fafafa;
+  border: none;
+  padding: 10px 16px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  box-shadow: var(--neon-effect);
+}
+
+button#theme-toggle:hover {
+  background: #7d00cc;
+  transform: scale(1.02);
+  box-shadow: 0 0 12px #9d00ff, 0 0 24px #9d00ff;
+}
+
+main {
+  flex: 1;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.search-container {
+  width: 100%;
+  max-width: 700px;
+  margin: 20px auto;
+}
+
+.gsc-search-box, .gsc-input-box {
+  border-radius: var(--border-radius) !important;
+  border: 1px solid var(--accent-color) !important;
+  box-shadow: var(--neon-effect) !important;
+}
+
+.gsc-search-button {
+  border-radius: var(--border-radius) !important;
+  background-color: var(--accent-color) !important;
+  border: none !important;
+}
+
+.quick-links {
+  margin: 40px auto;
+  max-width: 700px;
+}
+
+.quick-links h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: var(--accent-color);
+  text-shadow: var(--neon-effect);
+}
+
+.quick-links ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.quick-links li a {
+  display: block;
+  padding: 8px 16px;
+  background-color: var(--accent-color);
+  color: rgb(255, 255, 255);
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  box-shadow: var(--neon-effect);
+}
+
+.quick-links li a:hover {
+  opacity: 0.9;
+  box-shadow: 0 0 12px #9d00ff, 0 0 24px #9d00ff;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  background-color: inherit;
+  margin-top: auto;
+  border-top: 1px solid var(--accent-color);
+  box-shadow: 0 -5px 10px rgba(157, 0, 255, 0.2);
+}
+
+footer p {
+  margin: 5px 0;
+}
+
+a {
+  color: var(--link-color-light);
+  text-decoration: none;
+}
+
+/* Темная тема */
+body.dark-theme {
+  background: var(--bg-color-dark);
+  color: var(--text-color-dark);
+}
+
+body.dark-theme a {
+  color: var(--link-color-dark);
+}
+
+body.light-theme {
+  background: var(--bg-color-light);
+  color: var(--text-color-light);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  header {
+    padding: 15px 10px;
+  }
+
+  .quick-links ul {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  button#theme-toggle {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .quick-links li a {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+}
+
+.search-container {
+  width: 100%;
+  max-width: 700px;
+  margin: 20px auto;
+  border: none !important; /* Добавляем это правило */
+}
+
+
+.gsc-control-cse {
+  border: none !important;
+  background-color: transparent !important;
+  padding: 0 !important;
+}
+
+.gsc-input-box {
+  border: none !important;
+  background-color: rgba(157, 0, 255, 0.1) !important;
+  box-shadow: var(--neon-effect) !important;
+}
+
+.gsc-input {
+  background-color: transparent !important;
+}
+
+.gsc-search-button {
+  background-color: var(--accent-color) !important;
+  border: none !important;
+  box-shadow: var(--neon-effect) !important;
+}
+
+.gsc-tabHeader {
+  border: none !important;
+}
+
+.gsc-results {
+  border: none !important;
+}
